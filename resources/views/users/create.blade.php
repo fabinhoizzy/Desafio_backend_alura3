@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('users._partials.navbar')
+
     <h1>Novo Usuário</h1>
 
     @include('includes.validations-form')

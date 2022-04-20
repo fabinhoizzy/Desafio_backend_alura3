@@ -9,8 +9,9 @@ Route::get('/csv/export', [CsvExportController::class, 'export']);
 Route::get('/csv/import', [CsvImportController::class, 'show'])->name('csv.show');
 Route::post('/csv/import', [CsvImportController::class, 'store'])->name('csv.store');
 
-Route::get('/tabela', [TabelaController::class, 'index'])->name('tabela.index');
-Route::get('/tabela', [TabelaController::class, 'show'])->name('tabela.show');
+Route::get('/tabela/index', [TabelaController::class, 'index'])->name('tabela.index');
+Route::get('/tabela/show', [TabelaController::class, 'show'])->name('tabela.show');
+
 
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');

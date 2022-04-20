@@ -16,7 +16,8 @@ class TabelaController extends Controller
 
     public function show()
     {
-        $tabelaDetalhe = Csv_table::all();
-        return view('tabela.detalhe', compact('tabelaDetalhe'));
+        $tabela = Csv_table::all();
+
+        return view('tabela.tabelaDetalhe', compact('tabela'));
     }
 }
