@@ -64,7 +64,7 @@ class UserController extends Controller
             return redirect()->route('users.index');
 
         $data = $request->only('name', 'email');
-        if ($request->passwrd)
+        if ($request->password)
             $data['password'] = bcrypt($request->password);
         $user->update($data);
 

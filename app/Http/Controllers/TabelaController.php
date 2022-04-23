@@ -2,22 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Csv_table;
+use App\Models\Tabela;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TabelaController extends Controller
 {
+    protected $tabela;
+    protected $user;
+
+    public function __construct(Tabela $tabela, User $user)
+    {
+        $this->tabela = $tabela;
+        $this->user = $user;
+    }
+
     public function index()
     {
-        $tabela = Csv_table::get();
+        $user = User::all();
+        $tabela = Tabela::all();
 
-        return view('tabela.tabela', compact('tabela'));
+        return view('users.tabelas.tabela', ['tabelas' => $tabela, 'user' => $user]);
     }
 
     public function show()
     {
-        $tabela = Csv_table::all();
+        $user = User::all();
+        $tabela = Tabela::all();
 
-        return view('tabela.tabelaDetalhe', compact('tabela'));
+        return view('users.tabelas.tabelaDetalhe', ['tabelas' => $tabela, 'user' => $user]);
     }
+
 }

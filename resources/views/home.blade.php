@@ -3,7 +3,7 @@
 
 @include('users._partials.navbar')
 
-<h1>Bem Vindo ao Sistema, no momento em desevolvimento</h1>
+<h1>Bem Vindo ao Sistema</h1>
 
 
 

@@ -10,7 +10,7 @@
 <body>
 
 <div class="app">
-        @yield('content')
+    @yield('content')
 </div>
 
 </body>

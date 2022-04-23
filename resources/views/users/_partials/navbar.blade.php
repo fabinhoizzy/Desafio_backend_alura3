@@ -7,22 +7,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('users.index') }}">Usuário</a>
-                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link" href="/csv/import">Importar Transações</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('csv.show') }}">Importar Transações</a>
+                    <a class="nav-link" href="/tabela/index ">Importações Realizada</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=" {{ route('tabela.index') }} ">Importações Realizada</a>
+                    <a class="nav-link" href="/tabela/show">Importações Detalhadas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href=" {{ route('tabela.show') }} ">Importações Detalhadas</a>
-                </li>
+
+
                 {{--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
@@ -42,6 +38,17 @@
                 <input class="form-control me-2" action="{{ route('users.index') }}" method="get" name="search" type="search" placeholder="Pesquisar" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Pesquisar</button>
             </form>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('users.index') }}">Usuários</a>
+            </li>
+
+            <li class="nav-item">
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button class="btn btn-danger btn-sm">Logout</button>
+                </form>
+            </li>
         </div>
     </div>
 </nav>

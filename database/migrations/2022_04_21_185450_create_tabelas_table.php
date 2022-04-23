@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('csv_table', function (Blueprint $table) {
+        Schema::create('tabelas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->string('banco_origem');
             $table->string('agencia_origem');
             $table->string('conta_origem');
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('csv_table');
+        Schema::dropIfExists('tabelas');
     }
 };

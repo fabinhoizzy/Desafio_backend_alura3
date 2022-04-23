@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Csv_table extends Model
+class Tabela extends Model
 {
     use HasFactory;
 
-    /**
-     * @var string[]
-     */
     protected $fillable = [
+        'user_id',
         'banco_origem',
         'agencia_origem',
         'conta_origem',
@@ -22,5 +20,10 @@ class Csv_table extends Model
         'valor_transacao',
         'hora_transacao'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

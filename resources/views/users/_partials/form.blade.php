@@ -6,7 +6,7 @@
 
 <div class="mb-3">
     <label class="form-label">Email</label>
-    <input type="email" name="email" value="{{ $user->email ?? old('name') }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" name="email" value="{{ $user->email ?? old('email') }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 
 <div class="mb-3">
@@ -18,4 +18,5 @@
     <label class="form-check-label" for="exampleCheck1">Lembra-me</label>
 </div>
 <button type="submit" class="btn btn-primary">Enviar</button>
-<a class="btn btn-primary"  href="{{ route('users.show', $user->id)}}">Voltar</a>
+
+

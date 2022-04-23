@@ -2,7 +2,11 @@
 
 namespace App\Imports;
 
-use App\Models\Csv_table;
+use App\Models\Tabela;
+use App\Models\User;
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToModel;
 
@@ -15,9 +19,11 @@ class CsvImport implements ToModel
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
+
     public function model(array $row)
     {
-        return new Csv_table([
+        return new Tabela([
+            'user_id' => Auth::user()->getAuthIdentifier('id'),
             'banco_origem' => $row[0],
             'agencia_origem' => $row[1],
             'conta_origem' => $row[2],
@@ -27,6 +33,7 @@ class CsvImport implements ToModel
             'valor_transacao' => $row[6],
             'hora_transacao' => $row[7]
         ]);
+
     }
 
 }

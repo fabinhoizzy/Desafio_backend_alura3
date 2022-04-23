@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Imports\CsvImport;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -53,4 +54,10 @@ class User extends Authenticatable
 
         return $users;
     }
+
+    public function tables()
+    {
+        return $this->hasMany(Tabela::class);
+    }
+
 }
